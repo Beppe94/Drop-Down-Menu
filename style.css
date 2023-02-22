@@ -1,0 +1,40 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1rem;
+}
+
+.drop-down-menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.car-menu {
+    display: inline-block;
+}
+
+.drop-car-menu {
+    display: none;
+}
+
+
+
+.menu-car-model {
+    display: none;
+    justify-content: center;
+}
+
+.drop-down-brands:hover .menu-car-model {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.active {
+    display: block;
+}
