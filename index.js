@@ -2,7 +2,7 @@ const carMenu = document.getElementById('car-menu');
 const dropCarMenu = document.getElementById('drop-car-menu');
 const modelMenu = document.getElementById('drop-model-menu');
 const arrow = document.getElementById('arrow');
-const brandsArrow = document.getElementById('brands-arrow');
+const brandsArrow = document.querySelector('#brands-arrow');
 
 
 document.addEventListener('click', (e) => {
@@ -20,13 +20,13 @@ document.addEventListener('click', (e) => {
 window.addEventListener('load', function() {
 
     document.addEventListener('click', (e) => {
-        document.querySelectorAll('.menu-car-model').forEach(function(el) {
+        document.querySelectorAll('.drop-down-brands').forEach(function(el) {
             if(el !== e.target)  {
-                el.classList.remove('active');
-                brandsArrow.classList.remove('down')
+                console.log(el);
+                el.querySelector('.menu-car-model').classList.remove('active');
+                el.querySelector('.arrow').classList.remove('down');
             }
         });
-        console.log(e.target.matches('.car-menu'));
         if(e.target.matches('.car')) {
             e.target.closest('.drop-down-brands').querySelector('.menu-car-model').classList.toggle('active');
             e.target.closest('.drop-down-brands').querySelector('.arrow').classList.add('down')
