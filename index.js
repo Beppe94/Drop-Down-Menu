@@ -1,10 +1,8 @@
-const carMenu = document.getElementById('car-menu');
 const dropCarMenu = document.getElementById('drop-car-menu');
-const modelMenu = document.getElementById('drop-model-menu');
+const dropBikeMenu = document.getElementById('drop-bike-menu');
 const arrow = document.getElementById('arrow');
-const brandsArrow = document.querySelector('#brands-arrow');
 
-
+//Cars Menus
 document.addEventListener('click', (e) => {
     if(e.target.closest('.car-menu')) {
         dropCarMenu.classList.add('active');
@@ -17,19 +15,41 @@ document.addEventListener('click', (e) => {
     } 
 });
 
-window.addEventListener('load', function() {
 
-    document.addEventListener('click', (e) => {
-        document.querySelectorAll('.drop-down-brands').forEach(function(el) {
-            if(el !== e.target)  {
-                console.log(el);
-                el.querySelector('.menu-car-model').classList.remove('active');
-                el.querySelector('.arrow').classList.remove('down');
-            }
-        });
-        if(e.target.matches('.car')) {
-            e.target.closest('.drop-down-brands').querySelector('.menu-car-model').classList.toggle('active');
-            e.target.closest('.drop-down-brands').querySelector('.arrow').classList.add('down')
+document.addEventListener('click', (e) => {
+    document.querySelectorAll('.drop-down-brands').forEach(function(el) {
+        if(el !== e.target)  {
+            el.querySelector('.menu-car-model').classList.remove('active');
+            el.querySelector('.arrow').classList.remove('down');
         }
     });
+    if(e.target.matches('.car')) {
+        e.target.closest('.drop-down-brands').querySelector('.menu-car-model').classList.toggle('active');
+        e.target.closest('.drop-down-brands').querySelector('.arrow').classList.add('down')
+    }
+});
+
+//Bikes Menus
+document.addEventListener('click', (e) => {
+    if(e.target.closest('.bike-menu')) {
+        dropBikeMenu.classList.add('active');
+        if(e.target.querySelector('.arrow')) {
+            e.target.querySelector('.arrow').classList.add('down');
+        }
+    } else {
+        dropBikeMenu.classList.remove('active');
+        document.querySelector('.bike-menu').querySelector('.arrow').classList.remove('down')
+    } 
+});
+document.addEventListener('click', (e) => {
+    document.querySelectorAll('.drop-down-bike-brands').forEach(function(el) {
+        if(el !== e.target)  {
+            el.querySelector('.menu-bike-model').classList.remove('active');
+            el.querySelector('.arrow').classList.remove('down');
+        }
+    });
+    if(e.target.matches('.bike')) {
+        e.target.closest('.drop-down-bike-brands').querySelector('.menu-bike-model').classList.toggle('active');
+        e.target.closest('.drop-down-bike-brands').querySelector('.arrow').classList.add('down')
+    }
 });
