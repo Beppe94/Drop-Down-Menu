@@ -89,7 +89,7 @@ body {
     display: none;
 }
 
-.bike-menu:hover {
+.bike-menu h1:hover {
     border-bottom: 2px solid #fefefe;
 }
 
