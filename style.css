@@ -27,7 +27,7 @@ body {
     background-color: rgba(47, 79, 221, 0.678);
     border: 2px solid #fefefe;
     width: min-content;
-    max-height: 100px;
+    height: 100px;
     margin: 0 auto;
     top: 38%;
     position: absolute;
@@ -110,4 +110,28 @@ body {
     background-color: #4a41a8;
     border: 2px solid #fefefe;
     border-radius: 10px;
+}
+
+@media (max-width:700px) {
+    .wrapper {
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .nav-bar {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .nav-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .drop-down-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
